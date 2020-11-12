@@ -1,8 +1,14 @@
-//chbibkey.c
+//clib.c
 
 #include <stdio.h>
 #include <unistd.h>
-//#include <string.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <expat.h>
+//#include <libxml/parser.h>
+//#include <iostream.h>
+
 
 #define MAX_BIBLEN 2000
 const int alloc_bibtex = MAX_BIBLEN;
@@ -32,7 +38,7 @@ int main(int argc, char **argv) {
 		//	//strcpy(bibtex, argv[0]);
 		//	bibtex = argv[2];
 		//}
-		bibtex = argv[2];
+		strcpy(bibtex, argv[2]);
 		//bibfilename = argv[2];
 		printf("bibtex %s exists as argv\n", bibtex);
 	} 

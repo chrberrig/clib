@@ -1,11 +1,13 @@
-all: chbibkey
+FNAME=clib
+CC=gcc
 
-chbibkey: chbibkey.o
-	gcc -o chbibkey chbibkey.o
+all: ${FNAME}
 
-chbibkey.o: chbibkey.c
-	gcc -c chbibkey.c
+${FNAME}: ${FNAME}.o
+	${CC} -o ${FNAME} ${FNAME}.o
+
+${FNAME}.o: ${FNAME}.c
+	${CC} -c ${FNAME}.c
 
 clean:
-	rm chbibkey.o chbibkey
-
+	rm ${FNAME}.o ${FNAME}
