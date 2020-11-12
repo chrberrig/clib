@@ -11,3 +11,6 @@ ${FNAME}.o: ${FNAME}.c
 
 clean:
 	rm ${FNAME}.o ${FNAME}
+
+
+.PHONY: all clean install
