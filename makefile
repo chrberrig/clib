@@ -1,16 +1,16 @@
-FNAME=clib
-CC=gcc
+SRC = clib http_reqs
+CC = gcc
 
-all: ${FNAME}
+all: ${SRC}
 
-${FNAME}: ${FNAME}.o
-	${CC} -o ${FNAME} ${FNAME}.o
+%: %.o
+	${CC} -o $@ $< -Wall -O3
 
-${FNAME}.o: ${FNAME}.c
-	${CC} -c ${FNAME}.c
+%.o: %.c
+	${CC} -c $< -Wall -O3
 
 clean:
-	rm ${FNAME}.o ${FNAME}
+	rm *.o 
 
 
 .PHONY: all clean install
